@@ -17,7 +17,8 @@ function showAffirmation() {
     const affirmations = [
         "You are purrfect just the way you are!",
         "Believe in yourself, you're clawsome!",
-        "You deserve all the naps and treats!"
+        "You deserve all the naps and treats!",
+        "You should chase all the butterflies and lasers you want!
     ];
     const randomIndex = Math.floor(Math.random() * affirmations.length);
     const bubble = document.getElementById('affirmation-bubble');
@@ -30,7 +31,8 @@ function showSurprise() {
     const surprises = [
         "Surprise! A virtual cuddle from a cat!",
         "You've unlocked a secret cat dance party!",
-        "Meow! You're the cat's pajamas!"
+        "Meow! You're the cat's pajamas!",
+        "It's time to get a treat! Order in now!"
     ];
     const randomIndex = Math.floor(Math.random() * surprises.length);
     const bubble = document.getElementById('surprise-bubble');
