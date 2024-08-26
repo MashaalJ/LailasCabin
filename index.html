@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laila's Cat Cabin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cabin">
+        <div class="cabin-inner">
+            <h1>Welcome to Laila's Cat Cabin</h1>
+            <p>Instructions: Click on a cat to receive a special message or surprise!, </p>
+            <label for="background-select">Select Background:</label>
+    <select id="background-select" onchange="changeBackground(this.value)">
+        <option value="">-- Choose Background --</option>
+        <option value="https://github.com/MashaalJ/LailasCabin/blob/main/cabin.jpeg?raw=true">Background 1</option>
+        <option value="https://github.com/MashaalJ/LailasCabin/blob/main/cars%20and%20muntain.jpeg?raw=true">Background 2</option>
+        <option value="https://github.com/MashaalJ/LailasCabin/blob/main/Cat%20Cafe.jpeg?raw=true">Background 3</option>
+    </select>
+            <div class="game-buttons">
+                <button onclick="openGame('cat-game')">Play Cat Game</button>
+                <button onclick="openGame('memory-game')">Play Memory Game</button>
+            </div>
+        </div>
+        <div class="forest-view">
+            <div class="side-paws left"></div>
+            <div class="side-paws right"></div>
+            <div class="cat" id="motivational-cat" onclick="showMotivation()">
+                <img src="https://i.giphy.com/fikiml0dKfRQ2ZS08E.webp" alt="Motivational Cat" class="cat-icon" style="width: 300px; height: auto;">
+                <div class="speech-bubble" id="motivational-bubble"></div>
+            </div>
+            <div class="cat" id="date-cat" onclick="showDate()">
+                <img src="https://github.com/MashaalJ/LailasCabin/blob/main/Cute%20Cat.gif?raw=true" alt="Date Cat" class="cat-icon" style="width: 300px; height: auto;">
+                <div class="speech-bubble" id="date-bubble"></div>
+            </div>
+            <div class="cat" id="affirmation-cat" onclick="showAffirmation()">
+                <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXljdHFxaG4zemxmbnJjcmdoN3diZjgyN2gwNmtwOGE2aW1pYXEybiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/z0hUv6bpBWUUOtShDf/giphy.gif" alt="Affirmation Cat" class="cat-icon" style="width: 300px; height: auto;">
+                <div class="speech-bubble" id="affirmation-bubble"></div>
+            </div>
+            <div class="cat" id="surprise-cat" onclick="showSurprise()">
+                <img src="https://github.com/MashaalJ/LailasCabin/blob/main/Cat%20with%20pumpkin.gif?raw=true" alt="Surprise Cat"  class="cat-icon" style="width: 300px; height: auto;" >
+                <div class="speech-bubble" id="surprise-bubble"></div>
+            </div>
+            
+        </div>
+    </div>
+  
+    <div class="background-selector">
+        <div class="background-option" onclick="changeBackground('background1.jpg')">
+            <img src="https://github.com/MashaalJ/LailasCabin/blob/main/cabin.jpeg?raw=true" alt="Background 1">
+        </div>
+        <div class="background-option" onclick="changeBackground('background2.jpg')">
+            <img src="https://github.com/MashaalJ/LailasCabin/blob/main/cars%20and%20muntain.jpeg?raw=true" alt="Background 2">
+        </div>
+        <div class="background-option" onclick="changeBackground('background3.jpg')">
+            <img src="https://github.com/MashaalJ/LailasCabin/blob/main/Cat%20Cafe.jpeg?raw=true" alt="Background 3">
+        </div>
+    </div>
+
+
+    
+    
+    <!-- Cat Game Popup -->
+    <div id="cat-game-popup" class="popup">
+        <span class="close-btn" onclick="closePopup('cat-game')">&times;</span>
+        <div class="cat-game">
+            <h2>Catch the Cat Game!</h2>
+            <div id="game-container"></div>
+            <p id="game-score">Score: 0</p>
+        </div>
+    </div>
+    
+    <!-- Memory Game Popup -->
+    <div id="memory-game-popup" class="popup">
+        <span class="close-btn" onclick="closePopup('memory-game')">&times;</span>
+        <div class="memory-game">
+            <h2>Cat Memory Game</h2>
+            <div class="game-board" id="game-board"></div>
+        </div>
+    </div>
+    
+    
+    <div id="cat-avatar"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+   

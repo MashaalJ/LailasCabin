@@ -1,0 +1,277 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f3f3;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    overflow: hidden;
+}
+
+.cabin {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://as1.ftcdn.net/v2/jpg/05/57/55/54/1000_F_557555431_4LiqjZbhvTQeC1U5ZBsIkBCRmB9JpVA3.jpg') no-repeat center center;
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #fff;
+}
+
+.cabin-inner {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+.side-paws.left, .side-paws.right {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    background-image: url('https://i.giphy.com/hT0Hr7EOFxWAJECiW2.webp');
+    background-repeat: repeat-y;
+    transform: rotate(180deg);
+}
+
+.side-paws.left {
+    left: 0;
+}
+
+.side-paws.right {
+    right: 0;
+}
+.forest-view {
+    width: 100%;
+    height: 50%;
+    background: url('') no-repeat center center;
+    background-size: cover;
+    position: relative;
+}
+
+.cat {
+    position: absolute;
+    font-size: 2rem;
+    cursor: pointer;
+    animation: catPop 3s infinite;
+    width: 1px;
+    height:1px;
+    background-size: 1px 1px;
+    background-repeat: no-repeat;
+    margin: 50px;
+}
+
+#motivational-cat { bottom: 500px; left: 20px; }
+#date-cat { bottom: 600px; right: 500px; }
+#affirmation-cat { bottom: 350px; left: 750px; }
+#surprise-cat { bottom: 250px; right: 1300px; }
+
+.speech-bubble {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+.background-selector {
+    margin: 20px;
+}
+.background-option {
+    display: inline-block;
+    margin: 10px;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+.background-option img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#cat-avatar {
+    width: 400px;
+    height: 400px;
+    background: url('https://github.com/MashaalJ/LailasCabin/blob/main/Cat.gif?raw=true') no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: walk 10s linear infinite;
+}
+
+@keyframes walk {
+    0% { left: 0; }
+    50% { left: calc(100% - 100px); }
+    100% { left: 0; }
+}
+
+@keyframes catPop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.memory-game {
+    text-align: center;
+}
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    margin: auto;
+}
+.card {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.card img {
+    display: none;
+}
+.card.flipped img {
+    display: block;
+}
+
+.cat-game {
+    text-align: center;
+    margin: 20px;
+}
+#game-container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    border: 2px solid #ccc;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+.game-cat {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.popup .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.popup .close-btn:hover,
+.popup .close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cat-game, .memory-game {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.memory-game .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    margin: auto;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.card img {
+    display: none;
+}
+
+.card.flipped img {
+    display: block;
+}
+
+/* Style for the game board */
+.memory-game .game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    margin: auto;
+}
+
+/* Style for each card */
+.card {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Hide the image by default */
+.card img {
+    max-width: 100%; /* Ensure image does not exceed card width */
+    max-height: 100%; /* Ensure image does not exceed card height */
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Style when card is flipped */
+.card.flipped img {
+    display: block; /* Show image when card is flipped */
+}
+
+
+
